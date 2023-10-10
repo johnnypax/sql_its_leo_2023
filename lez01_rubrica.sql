@@ -25,3 +25,12 @@ CREATE TABLE Persona(
 -- ALTER TABLE Persona ADD COLUMN matricola VARCHAR(10) NOT NULL UNIQUE AFTER cognome;
 -- ALTER TABLE Persona DROP COLUMN matricola;
 -- ALTER TABLE Persona MODIFY COLUMN telefono VARCHAR(100);
+
+-- DML
+INSERT INTO Persona(nome, cognome, cod_fis, telefono, email) VALUES
+("Giovanni", "Pace", "PCAGNN", "12345", "gio@pace.com");
+INSERT INTO Persona(nome, cognome, cod_fis) VALUES
+("Valeria", "Verdi", "VLRVRD");
+
+-- QL	
+SELECT * FROM Persona;
