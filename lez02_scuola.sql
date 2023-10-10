@@ -27,5 +27,16 @@ INSERT INTO Studente(nome, cognome, matricola) VALUES
 INSERT INTO Studente(nome, cognome, matricola) VALUES
 ("Mario", "Rossi", "AB1236");
 
+DELETE FROM Studente WHERE matricola = "AB1235";
+DELETE FROM Studente WHERE studenteID = 1;
+
+UPDATE Studente SET 
+	nome = "Mariolino", 
+    cognome = "Paciotti" 
+    WHERE studenteID = 3;
+
 -- QL
 SELECT * FROM Studente;
+SELECT studenteID, nome, cognome, matricola FROM Studente;
+
+SELECT nome, cognome FROM Studente;
