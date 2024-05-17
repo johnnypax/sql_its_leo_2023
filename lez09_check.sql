@@ -46,10 +46,31 @@ INSERT INTO Prodotto (nome, descrizione, categoria, quantita, prezzo)
 VALUES 
 ('Faretti da Incasso', 'Set di 3 faretti da incasso con luci LED', 'Illuminazione', 20, 35.00);
 
-
+DELETE FROM Prodotto WHERE nome = "Vite";
 -- QL
 SELECT * FROM Prodotto;
 SELECT nome, descrizione FROM Prodotto;
 
 SELECT * FROM Prodotto WHERE categoria = "Bricolage";
 
+-- AGGREGAZIONE
+-- Conta tutte le righe di prodotti che sono all'interno del mio sistema
+SELECT COUNT(*) AS contatore_prodotti FROM Prodotto;
+SELECT COUNT(*) AS "Contatore Prodotti" FROM Prodotto;
+
+-- Somma tutte le quantità di prodotto presente in magazzino
+SELECT SUM(quantita) AS somma_quantita FROM Prodotto;
+
+SELECT categoria, SUM(quantita) AS somma_quantita 
+	FROM Prodotto
+    GROUP BY categoria;
+    
+-- Voglio la media dei prezzi per categoria
+SELECT categoria, AVG(prezzo) AS media_prezzo
+	FROM Prodotto
+    GROUP BY categoria
+    HAVING media_prezzo > 50;
+    
+-- Minimo e Massimo
+SELECT nome, MIN(quantita) AS minimo FROM Prodotto;
+SELECT nome, MAX(quantita) AS massimo FROM Prodotto;
